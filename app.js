@@ -1,4 +1,4 @@
-function criaCartao(categoria, pergunta, resposta) {
+function criaCartao(categoria, pergunta, resposta, audioPath) {
     let container = document.getElementById('container')
     let cartao = document.createElement('article')
     cartao.className = 'cartao'
@@ -16,13 +16,17 @@ function criaCartao(categoria, pergunta, resposta) {
     `
 
     let respostaEstaVisivel = false
+    let audio = audioPath ? new Audio(audioPath) : null
 
     function viraCartao() {
         respostaEstaVisivel = !respostaEstaVisivel
         cartao.classList.toggle('active', respostaEstaVisivel)
+        if (audio && respostaEstaVisivel) {
+            audio.currentTime = 0
+            audio.play()
+        }
     }
     cartao.addEventListener('click', viraCartao)
-
 
     container.appendChild(cartao)
 

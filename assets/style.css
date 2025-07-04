@@ -5,8 +5,19 @@
 }
 
 body {
-    background: url('img/bg-desktop.webp');
+    background: url('img/desktop.png');
     font-family: Bai Jamjuree;
+}
+
+.titulo {
+    position: relative;
+    text-align: center;
+    color: #db3911;
+    font-family: Helvetica;
+    -webkit-text-stroke: 1px black;
+    font-size: 50px;
+    top: 40px;
+
 }
 
 #container {
